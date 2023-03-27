@@ -1,0 +1,380 @@
+@import url('https://fonts.cdnfonts.com/css/gotham');
+
+:root {
+    --cor-primaria: #CC643F;
+    --cor-secundaria: #EEEDEC;
+    --cor-terciaria: #3A4358;
+    --cor-escuro: #2A2D35;
+
+
+    --fonte-primaria: 'Gotham Light', sans-serif;
+}
+
+body {
+    line-height: 1.5;
+    background-color: var(--cor-secundaria);
+    font-family: var(--fonte-primaria);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+  
+  .logo a {
+    font-size: 1.7rem;
+    font-family: 'Stretch Pro', sans-serif;
+    color: var(--cor-primaria);
+    font-weight: normal;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: var(--fonte-primaria);
+    background: var(--cor-escuro);
+    height: 8vh;
+  }
+
+  /* MAIN */
+
+  main {
+    background-color: var(--cor-secundaria);
+  }
+
+  .main-container {  
+    text-align: center;
+    padding: 30px 0;
+    font-size: 1.5rem;
+  }
+
+  .main-container h2 {
+    font-family: 'Stretch Pro', sans-serif;
+    color: var(--cor-escuro);
+
+  }
+  
+  .main-container h5 {
+    font-weight: bold;
+  }
+
+  .products {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    padding: 70px 0;
+  }
+
+  .title-product {
+    font-family: 'Gotham Black', sans-serif;
+    letter-spacing: 1px;
+    color: #3a4358d0;
+    font-size: 2.5rem;
+  }
+
+  .subtitle-product {
+    font-family: 'Gotham Black', sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    color: rgba(83, 79, 79, 0.959);
+  }
+
+
+  /* QUEM SOMOS */
+  .quemsomos-container {
+    max-width: 1000px;
+    padding: 40px 0 40px 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+
+  }
+
+  .quemsomos-titulo {
+    font-size: 2rem;
+    font-family: 'Stretch Pro', sans-serif;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+
+  .quemsomos-texto {
+    font-size: 1.5rem;
+    text-justify: justify;
+    margin-bottom: 20px;
+  }
+
+  .img_marca-rhadium img {
+      display: flex;
+      margin: 0 auto;
+      width: auto;
+      height: 700px;
+      margin-bottom: 30px;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+  }
+  
+  .mobile-menu {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+  }
+  
+  @media (max-width: 999px) {
+    body {
+      overflow-x: hidden;
+    }
+    .nav-list {
+      position: absolute;
+      top: 12vh;
+      right: 0;
+      width: 50%;
+      height: 100vh;
+      background: #23232e;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+      z-index: 1;
+    }
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+    }
+    .mobile-menu {
+      display: block;
+    }
+  }
+  
+  .nav-list.active {
+    transform: translateX(0);
+  }
+  
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+  
+  .mobile-menu.active .line2 {
+    opacity: 0;
+  }
+  
+  .mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+
+/* Footer */
+.footer-container {
+    max-width: 1170px;
+    background-color: var(--cor-escuro);
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: var(--cor-escuro);
+    padding: 70px 0 10px 0;
+
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: var(--cor-secundaria);
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: var(--cor-primaria);
+    height: 3px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 1rem;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    font-weight: 300;
+    color: #BBBBBB;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--cor-secundaria);
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: var(--cor-terciaria);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    border-radius: 50%;
+    color: var(--cor-secundaria);
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: var(--cor-primaria);
+    background-color: var(--cor-secundaria);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 50px;
+    color: var(--cor-secundaria);
+}
+
+span {
+    font-size: 18px;
+    color: var(--cor-secundaria);
+}
+
+.contact  {
+    color: var(--cor-secundaria);
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+strong a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+}
+
+strong a:hover {
+    text-decoration: underline;
+}
+
+/* Footer responsivo */
+
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    nav {
+        padding: 30px;
+    }
+
+    .logo {
+        margin-right: 14px;
+    }
+}
+
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+/* Quem somos - MAIN RESPONSIVO */
+@media (max-width: 767px) {
+
+  body main {
+    height: 100%;
+  }
+  .quemsomos-container {
+    padding: 10px;
+  }
+
+  .quemsomos-titulo {
+    margin-top: 20px;
+    font-size: 25px;
+  }
+
+  .quemsomos-texto {
+    font-size: 20px;
+    margin-top: 12px;
+  }
+
+  .img_marca-rhadium img {
+    width: 100%;
+    height: 270px;
+  }
+}
+
+@media (max-width: 480px) {
+    .products {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 5px;
+    }
+
+    .product-left_gab img {
+      width: 100%;
+    }
+
+    .product-right_fonte img {
+      width: 100%;
+    }
+}
+
